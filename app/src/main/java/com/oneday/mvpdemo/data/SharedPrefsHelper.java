@@ -1,5 +1,6 @@
 package com.oneday.mvpdemo.data;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 
 /**
@@ -16,8 +17,8 @@ public class SharedPrefsHelper {
 
     SharedPreferences mSharedPref;
 
-    public SharedPrefsHelper(SharedPreferences mSharedPref) {
-        this.mSharedPref = mSharedPref;
+    public SharedPrefsHelper(Context context) {
+        mSharedPref = context.getSharedPreferences(MY_PREF, Context.MODE_PRIVATE);
     }
 
     public void clear(){
@@ -36,7 +37,7 @@ public class SharedPrefsHelper {
         mSharedPref.edit().putBoolean(IS_LOGGED_IN, isLoggedIn).apply();
     }
 
-    public boolean getLoggedIn(){
+    public boolean getLoggedInMode(){
         return mSharedPref.getBoolean(IS_LOGGED_IN, false);
     }
 }

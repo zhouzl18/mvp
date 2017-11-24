@@ -26,11 +26,11 @@ public class DataManager {
         return prefsHelper.getEmail();
     }
 
-    public void saveLoggedIn(boolean isLoggedIn){
-        prefsHelper.putLoggedIn(isLoggedIn);
+    public void setLoggedIn(){
+        prefsHelper.putLoggedIn(true);
     }
 
-    public boolean getLoggedIn(){
-        return prefsHelper.getLoggedIn();
-    }
-}
+    public boolean getLoggedInMode(){
+        return prefsHelper.getLoggedInMode();
+    }}
+
